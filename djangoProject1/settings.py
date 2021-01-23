@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django.contrib.gis',
     'djangoProject1',
+    'geo',
 ]
 
 MIDDLEWARE = [
