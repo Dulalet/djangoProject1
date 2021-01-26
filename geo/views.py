@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.contrib.gis.geos import GEOSGeometry
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
-from rest_framework import permissions
-from geo.serializers import UserSerializer, GroupSerializer
+from rest_framework import viewsets, generics, permissions
+from geo.serializers import UserSerializer, GroupSerializer, BuildingSerializer, BusStopSerializer, RedLineSerializer
+from geo.models import Building, BusStop, RedLine
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -21,3 +21,63 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+class CreateBuilding(generics.ListCreateAPIView):
+    queryset = Building.objects.all()
+    serializer_class = BuildingSerializer
+
+
+class ListBuilding(generics.ListAPIView):
+    queryset = Building.objects.all()
+    serializer_class = BuildingSerializer
+
+
+class UpdateBuilding(generics.RetrieveUpdateAPIView):
+    queryset = Building.objects.all()
+    serializer_class = BuildingSerializer
+
+
+class DeleteBuilding(generics.DestroyAPIView):
+    queryset = Building.objects.all()
+    serializer_class = BuildingSerializer
+
+
+class CreateBusStop(generics.ListCreateAPIView):
+    queryset = BusStop.objects.all()
+    serializer_class = BusStopSerializer
+
+
+class ListBusStop(generics.ListAPIView):
+    queryset = BusStop.objects.all()
+    serializer_class = BusStopSerializer
+
+
+class UpdateBusStop(generics.RetrieveUpdateAPIView):
+    queryset = BusStop.objects.all()
+    serializer_class = BusStopSerializer
+
+
+class DeleteBusStop(generics.DestroyAPIView):
+    queryset = BusStop.objects.all()
+    serializer_class = BusStopSerializer
+
+
+class CreateRedLine(generics.ListCreateAPIView):
+    queryset = RedLine.objects.all()
+    serializer_class = RedLineSerializer
+
+
+class ListRedLine(generics.ListAPIView):
+    queryset = RedLine.objects.all()
+    serializer_class = RedLineSerializer
+
+
+class UpdateRedLine(generics.RetrieveUpdateAPIView):
+    queryset = RedLine.objects.all()
+    serializer_class = RedLineSerializer
+
+
+class DeleteRedLine(generics.DestroyAPIView):
+    queryset = RedLine.objects.all()
+    serializer_class = RedLineSerializer

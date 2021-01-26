@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "68309cd71a258c30a39567fce09a09ad5c4ff0bdc85b6fba22b47598c985c883"
+            "sha256": "77766a308ac108d5a046c13a417135e01cad23ef7aad3b981e6a59687bef8f3b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -32,12 +32,31 @@
             "index": "pypi",
             "version": "==3.1.5"
         },
+        "django-os-geocoder": {
+            "hashes": [
+                "sha256:a6b3ec67e2ff8f034bd1f015eb7c8b4795b9f024db8a614f0e10729d7c645779"
+            ],
+            "index": "pypi",
+            "version": "==0.1.6"
+        },
+        "progressbar": {
+            "hashes": [
+                "sha256:5d81cb529da2e223b53962afd6c8ca0f05c6670e40309a7219eacc36af9b6c63"
+            ],
+            "version": "==2.5"
+        },
         "pytz": {
             "hashes": [
                 "sha256:16962c5fb8db4a8f63a26646d8886e9d769b6c511543557bc84e9569fb9a9cb4",
                 "sha256:180befebb1927b16f6b57101720075a984c019ac16b1b7575673bea42c6c3da5"
             ],
             "version": "==2020.5"
+        },
+        "south": {
+            "hashes": [
+                "sha256:d360bd31898f9df59f6faa786551065bba45b35e7ee3c39b381b4fbfef7392f4"
+            ],
+            "version": "==1.0.2"
         },
         "sqlparse": {
             "hashes": [
