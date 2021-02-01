@@ -81,3 +81,6 @@ class UpdateRedLine(generics.RetrieveUpdateAPIView):
 class DeleteRedLine(generics.DestroyAPIView):
     queryset = RedLine.objects.all()
     serializer_class = RedLineSerializer
+
+
+
