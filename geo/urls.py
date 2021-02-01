@@ -17,4 +17,9 @@ urlpatterns = [
     path('redlines/create/', CreateRedLine.as_view(), name="redlines-create"),
     path('redlines/<int:pk>', UpdateRedLine.as_view(), name="redlines-update"),
     path('redlines/<int:pk>/delete', DeleteRedLine.as_view(), name="redlines-delete"),
+
+    path('streets/', ListStreet.as_view(), name="streets"),
+    path('streets/create/', CreateStreet.as_view(), name="streets-create"),
+    path('streets/<int:pk>', UpdateStreet.as_view(), name="streets-update"),
+    path('streets/<int:pk>/delete', DeleteStreet.as_view(), name="streets-delete"),
 ]

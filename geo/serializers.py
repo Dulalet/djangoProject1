@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from geo.models import Building, BusStop, RedLine
+from geo.models import Building, BusStop, RedLine, Street
 from rest_framework import serializers
 
 
@@ -33,3 +33,9 @@ class RedLineSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = RedLine
         fields = ['ogc_fid', 'id_style', 'id_style1', 'shape_leng', 'shape_le_1', 'wkb_geometry']
+
+
+class StreetSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Street
+        fields = ['ogc_fid', 'id', 'name', 'type', 'old_type', 'abreviatur', 'shape_leng', 'shape_le_1', 'wkb_geometry']

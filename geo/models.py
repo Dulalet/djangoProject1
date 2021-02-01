@@ -45,3 +45,18 @@ class RedLine(models.Model):
 
     class Meta:
         db_table = 'red_lines_project'
+
+
+class Street(models.Model):
+    ogc_fid = models.AutoField(primary_key=True)
+    id = models.IntegerField(blank=True, null=True)
+    name = models.CharField(max_length=100, blank=True, null=True)
+    type = models.CharField(max_length=100, blank=True, null=True)
+    old_type = models.CharField(max_length=100, blank=True, null=True)
+    abreviatur = models.CharField(max_length=100, blank=True, null=True)
+    shape_leng = models.FloatField(blank=True, null=True)
+    shape_le_1 = models.FloatField(blank=True, null=True)
+    wkb_geometry = models.GeometryField(srid=3857, blank=True, null=True)
+
+    class Meta:
+        db_table = 'streets_project'

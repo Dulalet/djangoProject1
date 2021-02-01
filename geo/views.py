@@ -1,8 +1,9 @@
-from django.contrib.gis.geos import GEOSGeometry
+# from django.contrib.gis.geos import GEOSGeometry
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets, generics, permissions
-from geo.serializers import UserSerializer, GroupSerializer, BuildingSerializer, BusStopSerializer, RedLineSerializer
-from geo.models import Building, BusStop, RedLine
+from geo.serializers import UserSerializer, GroupSerializer, BuildingSerializer, \
+    BusStopSerializer, RedLineSerializer, StreetSerializer
+from geo.models import Building, BusStop, RedLine, Street
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -82,5 +83,24 @@ class DeleteRedLine(generics.DestroyAPIView):
     queryset = RedLine.objects.all()
     serializer_class = RedLineSerializer
 
+
+class CreateStreet(generics.ListCreateAPIView):
+    queryset = Street.objects.all()
+    serializer_class = StreetSerializer
+
+
+class ListStreet(generics.ListAPIView):
+    queryset = Street.objects.all()
+    serializer_class = StreetSerializer
+
+
+class UpdateStreet(generics.RetrieveUpdateAPIView):
+    queryset = Street.objects.all()
+    serializer_class = StreetSerializer
+
+
+class DeleteStreet(generics.DestroyAPIView):
+    queryset = Street.objects.all()
+    serializer_class = StreetSerializer
 
 
